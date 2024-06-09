@@ -1,5 +1,6 @@
 import os
 from flask import Flask, request, redirect, url_for, render_template_string
+from urllib.parse import quote  # Import the quote function
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
