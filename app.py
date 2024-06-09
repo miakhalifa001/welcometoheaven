@@ -33,7 +33,7 @@ def upload_file():
         filename = file.filename
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(file_path)
-        bbcode = f'[video]{url_for("uploaded_file", filename=filename, _external=True)}[/video]'
+        bbcode = f'[video]{url_for("uploaded_file", filename=quote(filename), _external=True)}[/video]'
         return render_template_string('''
         <!doctype html>
         <title>Video Uploaded</title>
